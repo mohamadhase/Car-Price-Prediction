@@ -1,0 +1,1 @@
+PATH_REGEX = r"data/*.txt"
