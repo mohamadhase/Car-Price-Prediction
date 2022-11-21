@@ -55,15 +55,17 @@ class MyHTMLParser(HTMLParser):
                     self.obj.add_feature(self.last_att, data)
                     self.last_att = None
 
-        if self.last_tag =='td' and data.split() and self.table_count==7 :
+        if self.last_tag =='td' and data.split() and (self.table_count==7 or self.table_count==6):
 
             if self.last_att == None:
                 self.last_att = data
             else:
-                self.obj.add_feature(self.last_att, data.split()[-1])
-                self.last_att = None
-
-        if self.last_tag =='td' and data.split() and self.table_count==9 :
+                try :
+                    self.obj.add_feature(self.last_att, data.split()[-1])
+                    self.last_att = None
+                except :
+                    pass
+        if self.last_tag =='td' and data.split() and (self.table_count==9 or self.table_count==8) :
             if self.last_att == None:
                 self.last_att = data
             else:

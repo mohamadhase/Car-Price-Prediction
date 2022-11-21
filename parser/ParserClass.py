@@ -22,6 +22,9 @@ class Parser():
                 self.parser.feed(content)
                 self.objects.append(self.parser.obj)
                 self.parser.reset()
+            #print the progress as % of the files parsed but print only when the progress is a multiple of 10
+            if self.files_list.index(file)%100 == 0:
+                print(f'{self.files_list.index(file)/len(self.files_list)*100}%')
         df = pd.DataFrame([obj.__dict__ for obj in self.objects])
         df.to_csv('data.csv', index=False)
 
