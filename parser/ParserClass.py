@@ -27,5 +27,5 @@ class Parser():
                 print(f'{self.files_list.index(file)/len(self.files_list)*100}%')
         df = pd.DataFrame([obj.__dict__ for obj in self.objects])
         df.to_csv('data.csv', index=False)
-
+    
 
