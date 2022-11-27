@@ -24,17 +24,14 @@ class MyHTMLParser(HTMLParser):
             attrs (list): the attributes of the tag
         """
 
-        if tag in ['h3', 'h5','td','li'] :
-            self.last_tag = tag
-        else:
-            self.last_tag = None
+        self.last_tag = tag if tag in ['h3', 'h5','td','li'] else None
         if tag == 'table':
             self.table_count+=1
             self.last_att = None
-        if tag == 'ul':
+        elif tag == 'ul':
             self.ul_count+=1
 
-    def handle_data(self, data):
+    def handle_data(self, data):    # sourcery skip: use-contextlib-suppress
         """ this method is responsible for handling the data in the html file """
         if self.last_tag == 'h3' and not self.h3:
             #company name and model name separated by space
@@ -48,25 +45,25 @@ class MyHTMLParser(HTMLParser):
             elif self.h5_count == 1:
                 self.obj.add_feature('السعر', data.split()[0])
                 self.h5_count+=1
-        if self.last_tag =='td' and data.split() and self.table_count==5 :
-                if self.last_att == None:
-                    self.last_att = data
-                else:
-                    self.obj.add_feature(self.last_att, data)
-                    self.last_att = None
-
-        if self.last_tag =='td' and data.split() and (self.table_count==7 or self.table_count==6):
-
-            if self.last_att == None:
+        if self.last_tag =='td' and data.split() and self.table_count==5:
+            if self.last_att is None:
                 self.last_att = data
             else:
-                try :
+                self.obj.add_feature(self.last_att, data)
+                self.last_att = None
+
+        if self.last_tag == 'td' and data.split() and self.table_count in [7, 6]:
+
+            if self.last_att is None:
+                self.last_att = data
+            else:
+                try:
                     self.obj.add_feature(self.last_att, data.split()[-1])
                     self.last_att = None
-                except :
+                except Exception:
                     pass
-        if self.last_tag =='td' and data.split() and (self.table_count==9 or self.table_count==8) :
-            if self.last_att == None:
+        if self.last_tag == 'td' and data.split() and self.table_count in [9, 8]:
+            if self.last_att is None:
                 self.last_att = data
             else:
                 self.obj.add_feature(self.last_att, data.split()[-1])
