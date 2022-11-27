@@ -35,12 +35,12 @@ class CarFeatures:
         elif key=='السنة':
             try:
                 self.year = int(value)
-            except:
+            except Exception:
                 self.year = None
         elif key=='السعر':
             try:
                 self.price = int(value)
-            except:
+            except Exception:
                 self.price = None
         elif key == 'نوع الوقود':
             self.fuil_type = value
@@ -55,12 +55,12 @@ class CarFeatures:
         elif key == 'قوة الماتور':
             try:
                 self.motor_power = int(value)
-            except:
+            except Exception:
                 self.motor_power = None
         elif key == 'عداد السيارة':
             try:
                 self.mileage = int(value)
-            except:
+            except Exception:
                 self.mileage = None
         elif key == 'عدد الركاب':
             self.passenger_capacity = value
@@ -69,7 +69,7 @@ class CarFeatures:
         elif key == 'المجموع':
             try:
                 self.insurance_cost = int(value)
-            except:
+            except Exception:
                 self.insurance_cost = None
         elif key == 'تاريخ نشر الإعلان':
             self.sell_date = value

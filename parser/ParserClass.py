@@ -1,7 +1,7 @@
 #import the constant from /CAR PRICE PREDICTION/src/constants.py
 import sys
 import pandas as pd
-sys.path.insert(1, 'C:/Users/nasser/Desktop/Car-Price-Prediction/src')
+sys.path.insert(1, 'src')
 from constants import PATH_REGEX
 from glob import glob
 from MyHTMLParser import MyHTMLParser
