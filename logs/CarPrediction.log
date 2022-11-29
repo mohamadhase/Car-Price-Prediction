@@ -1,0 +1,495 @@
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Health check
+INFO:api:Health check successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+ERROR:__mp_main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+DEBUG:asyncio:Using selector: SelectSelector
+ERROR:api:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__mp_main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__mp_main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__mp_main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__mp_main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 18, in <module>
+    DesicionTreeModel = pickle.load(open('models/DesicionTreeModel.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DesicionTreeModel.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 19, in <module>
+    DesicionTreeModel = pickle.load(open('models/DecisionTree.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 19, in <module>
+    DesicionTreeModel = pickle.load(open('models/DecisionTree.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 19, in <module>
+    DesicionTreeModel = pickle.load(open('./models/DecisionTree.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: './models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 19, in <module>
+    DesicionTreeModel = pickle.load(open('./models/DecisionTree.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: './models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 19, in <module>
+    DesicionTreeModel = pickle.load(open('CAR/models/DecisionTree.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 19, in <module>
+    DesicionTreeModel = pickle.load(open('CAR/models/DecisionTree.pkl', 'rb')) # what could raise an exception ?  # a: file not found
+FileNotFoundError: [Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('CAR/models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('CAR/models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('/models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'CAR/models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('./models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: 'DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: 'DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "C:\Users\nasser\Desktop\CAR\api.py", line 23, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 27, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 28, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 28, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 30, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: './DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 30, in <module>
+    DesicionTreeModel = pickle.load(open('./DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: './DecisionTree.pkl'
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+ERROR:__mp_main__:[Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 27, in <module>
+    DesicionTreeModel = pickle.load(open('../models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+ERROR:__main__:[Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 27, in <module>
+    DesicionTreeModel = pickle.load(open('../models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+DEBUG:asyncio:Using selector: SelectSelector
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+DEBUG:asyncio:Using selector: SelectSelector
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+ERROR:api:[Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File ".\api.py", line 27, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+ERROR:api:[Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File ".\api.py", line 27, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
