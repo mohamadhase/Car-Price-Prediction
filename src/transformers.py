@@ -6,9 +6,17 @@ from sklearn.impute import KNNImputer
 import convert_numbers
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from functools import wraps
-
+# make the importing of the utils relative to the current file place 
+# so we can import the utils from the current directory
+import os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+#when i try import this file from this path CAR/ i got an error that the utlis module is not found
+#a: you need to add the current directory to the path
+import sys
+sys.path.append(os.getcwd())
 from utils import fill_by_mean_mode_of_year , validate_columns, normalize_prev_owner, arabic_to_english, encoding_feature, encoding_additional_info
-
+import json
+import pickle
 
 class DateTransformer(BaseEstimator, TransformerMixin):
     """this class is used to extract the year"""
@@ -65,21 +73,31 @@ class PassengerCpacityTransformer(BaseEstimator, TransformerMixin):
 
 class NominalTransformer(BaseEstimator, TransformerMixin):
     """ this class takes a list of columns and apply one hot encoding on them """
-    hot_encoder_data = {
-
+    hot_encoder_data = { 
+      
     }
 
     def __init__(self, columns:list):
         self.columns = columns
 
     def fit(self, X: pd.DataFrame, y=None):
+
         return self
 
     @validate_columns
     def transform(self, X: pd.DataFrame, y=None):
+        try :
+            # load the hot encoder data from the pickle file
+            for column in self.columns:
+                with open(f'{column}_label_encoder.pkl', 'rb') as handle:
+                    self.hot_encoder_data[column] = pickle.load(handle)
+        except Exception as e:
+            print(e)
+            pass
         for column in self.columns:  # not sure if this is work or not
-            if column in self.hot_encoder_data:
-                classes = self.hot_encoder_data[column]['label_encoder'].classes_
+
+            if column in NominalTransformer.hot_encoder_data:
+                classes = NominalTransformer.hot_encoder_data[column].classes_
                 # add every class as a column with value 0 if it is not equal the column value and 1 if it is
                 X = X.join(pd.DataFrame(np.where(X[column].values[:, None] == classes, 1, 0),
                                         columns=classes, index=X.index))
@@ -99,15 +117,16 @@ class NominalTransformer(BaseEstimator, TransformerMixin):
                 X = pd.concat([X, feature_features], axis=1)
 
                 # save each class and its
-                self.hot_encoder_data[column] = {
-                    'label_encoder': label_encoder,
-                    'one_hot_encoder': one_hot_encoder
-                }
+                NominalTransformer.hot_encoder_data[column] =label_encoder
         X.drop(self.columns, axis=1, inplace=True)
         try :
              X.drop([column + '_label' for column in self.columns], axis=1, inplace=True)
         except KeyError :
             pass
+        #for each column save the label encoder model in file called coulmn_label_encoder.pkl
+        for column in self.columns:
+            with open(f'{column}_label_encoder.pkl', 'wb') as f:
+                pickle.dump(NominalTransformer.hot_encoder_data[column], f)
         return X
 
 

@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 
 #make the attrs not required
+
 @dataclass()
 class CarFeatures:
     """Car features dataclass"""
@@ -79,3 +80,19 @@ class CarFeatures:
             else:
                 self.additional_info += ","+value
         
+@dataclass()
+class CarFeaturesPrediction:
+    """Car features dataclass"""
+    year: int   
+    color: str  
+    fuil_type: str
+    car_prev_state: str 
+    license_country: str 
+    transimission_type: str 
+    glass_type: str 
+    motor_power: int
+    mileage: int 
+    passenger_capacity: str 
+    prev_owners: str 
+    additional_info: str 
+    sell_date: str
