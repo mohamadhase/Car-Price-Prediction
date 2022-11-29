@@ -104,8 +104,10 @@ class NominalTransformer(BaseEstimator, TransformerMixin):
                     'one_hot_encoder': one_hot_encoder
                 }
         X.drop(self.columns, axis=1, inplace=True)
-     
-        X.drop([column + '_label' for column in self.columns], axis=1, inplace=True)
+        try :
+             X.drop([column + '_label' for column in self.columns], axis=1, inplace=True)
+        except KeyError :
+            pass
         return X
 
 
@@ -159,4 +161,5 @@ class AdditionalInfoTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X: pd.DataFrame, y=None):
         X = encoding_additional_info(X, self.column, self.POSSIBLE_ADDITONALS)
         X.drop(self.column, axis=1, inplace=True)
+   
         return X
