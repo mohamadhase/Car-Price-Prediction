@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import re
 import convert_numbers
+from sklearn.pipeline import Pipeline
 
 def validate_columns(f):
     @wraps(f)
@@ -144,3 +145,19 @@ def encoding_additional_info(df: pd.DataFrame, feature: str,possible_values:list
             
         return df
     
+
+def train_models(models: dict,X_train:pd.DataFrame,y_train:pd.Series) -> dict:
+    """ this function is used to train the models and return the trained models """
+    for name,model in models.items():
+        models[name]['model'] = Pipeline(steps=model['steps'])
+        models[name]['model'].fit(X_train.copy(),y_train.copy())
+    return models
+
+def eval_models(models:dict,X_test:pd.DataFrame,y_test:pd.Series,type:str) -> dict:
+    """ this function is used to evaluate the models and return the results """
+    if type not in ['train','test']:
+        raise ValueError("type must be train or test")
+    for name,model in models.items():
+        print(f"evaluating {name} model")
+        models[name][f'score_{type}'] = model['model'].score(X_test.copy(),y_test.copy())
+    return models
