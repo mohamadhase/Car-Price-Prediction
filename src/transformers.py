@@ -85,23 +85,21 @@ class NominalTransformer(BaseEstimator, TransformerMixin):
         return self
 
     @validate_columns
-    def transform(self, X: pd.DataFrame, y=None):
+    def transform(self, X: pd.DataFrame, y=None):      
         try :
             # load the hot encoder data from the pickle file
             for column in self.columns:
-                with open(f'{column}_label_encoder.pkl', 'rb') as handle:
+                with open(f'../models/{column}_label_encoder.pkl', 'rb') as handle:
                     self.hot_encoder_data[column] = pickle.load(handle)
         except Exception as e:
             print(e)
-            pass
         for column in self.columns:  # not sure if this is work or not
-
+            
             if column in NominalTransformer.hot_encoder_data:
                 classes = NominalTransformer.hot_encoder_data[column].classes_
                 # add every class as a column with value 0 if it is not equal the column value and 1 if it is
                 X = X.join(pd.DataFrame(np.where(X[column].values[:, None] == classes, 1, 0),
-                                        columns=classes, index=X.index))
-
+                                                columns=classes, index=X.index))
             else:
                 label_encoder = LabelEncoder()
                 feature_labels = label_encoder.fit_transform(X[column])
@@ -125,7 +123,7 @@ class NominalTransformer(BaseEstimator, TransformerMixin):
             pass
         #for each column save the label encoder model in file called coulmn_label_encoder.pkl
         for column in self.columns:
-            with open(f'{column}_label_encoder.pkl', 'wb') as f:
+            with open(f'../models/{column}_label_encoder.pkl', 'wb') as f:
                 pickle.dump(NominalTransformer.hot_encoder_data[column], f)
         return X
 
@@ -147,7 +145,7 @@ class OrdenalTransformer(BaseEstimator, TransformerMixin):
         return X
 
 
-class ColorTransformer(BaseEstimator, TransformerMixin):
+class CarNameTransformer(BaseEstimator, TransformerMixin):
     def __init__(self, column):
         self.column = column
 
@@ -156,6 +154,7 @@ class ColorTransformer(BaseEstimator, TransformerMixin):
 
     @validate_columns
     def transform(self, X: pd.DataFrame, y=None):
+        X['company_name'] = X[self.column].apply(lambda x: x.split()[0])
         X.drop(self.column, axis=1, inplace=True)
         return X
 
@@ -180,5 +179,4 @@ class AdditionalInfoTransformer(BaseEstimator, TransformerMixin):
     def transform(self, X: pd.DataFrame, y=None):
         X = encoding_additional_info(X, self.column, self.POSSIBLE_ADDITONALS)
         X.drop(self.column, axis=1, inplace=True)
-   
         return X

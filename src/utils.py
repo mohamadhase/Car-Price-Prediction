@@ -5,7 +5,8 @@ import numpy as np
 import re
 import convert_numbers
 from sklearn.pipeline import Pipeline
-
+# mean square error
+from sklearn.metrics import mean_squared_error
 def validate_columns(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -19,6 +20,7 @@ def validate_columns(f):
         # if its a list of columns
         for col in args[0].columns: 
             if col not in args[1].columns:
+                print(col,args[1].columns)
                 raise WrongColumnName(col)
         return f(*args, **kwargs)
     
@@ -153,11 +155,31 @@ def train_models(models: dict,X_train:pd.DataFrame,y_train:pd.Series) -> dict:
         models[name]['model'].fit(X_train.copy(),y_train.copy())
     return models
 
-def eval_models(models:dict,X_test:pd.DataFrame,y_test:pd.Series,type:str) -> dict:
+def eval_models(models:dict,X_test:pd.DataFrame,y_test:pd.Series,type:str,metric = 'r2') -> dict:
     """ this function is used to evaluate the models and return the results """
     if type not in ['train','test']:
         raise ValueError("type must be train or test")
+    if metric not in ['r2','mae','rmse','accuracy']:
+        raise ValueError("metric must be r2 or mae or mse or accuracy")
     for name,model in models.items():
         print(f"evaluating {name} model")
-        models[name][f'score_{type}'] = model['model'].score(X_test.copy(),y_test.copy())
+        # eval based on the given metric eg: r2 , rmse , mae using score method
+        from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error,accuracy_score
+        if metric == 'r2':
+            models[name][f'score_{type}'] = model['model'].score(X_test.copy(),y_test.copy())   
+        elif metric == 'rmse':
+            models[name][f'score_{type}'] = np.sqrt(mean_squared_error(y_test.copy(),model['model'].predict(X_test.copy())))
+        elif metric == 'mae':
+            models[name][f'score_{type}'] = mean_absolute_error(y_test.copy(),model['model'].predict(X_test.copy()))
+        elif metric == 'accuracy':
+            models[name][f'score_{type}'] = accuracy_score(y_test.copy(),model['model'].predict(X_test.copy()))
+
+  
     return models
+
+
+def log_transform(x):
+    """ 
+    Calculate log adding 1 to avoid calculation errors if x is very close to 0.
+    """
+    return np.log(x+1)
