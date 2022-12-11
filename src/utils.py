@@ -5,8 +5,10 @@ import numpy as np
 import re
 import convert_numbers
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
 # mean square error
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error,accuracy_score
+
 def validate_columns(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -147,12 +149,23 @@ def encoding_additional_info(df: pd.DataFrame, feature: str,possible_values:list
             
         return df
     
-
+def hyper_parameter_training(models:dict,X_train:pd.DataFrame,y_train:pd.Series,scoring:str = 'r2',cv:int = 5) -> dict:
+    """ this function is used to find the best hyper parameters for the models and return the trained models """
+    for name,model in models.items():
+        print(f"Training the model {name} ")
+        models[name]['model'] = Pipeline(steps=model['steps'])
+        models[name]['model'] = GridSearchCV(estimator  = models[name]['model'],param_grid = models[name]['grid_vals'],scoring=scoring,cv=cv,n_jobs=-1,) # ignore the warnings
+        models[name]['model'].fit(X_train.copy(),y_train.copy())
+    return models
+    
 def train_models(models: dict,X_train:pd.DataFrame,y_train:pd.Series) -> dict:
     """ this function is used to train the models and return the trained models """
     for name,model in models.items():
         models[name]['model'] = Pipeline(steps=model['steps'])
+        print(f"fitting the model {name} ")
         models[name]['model'].fit(X_train.copy(),y_train.copy())
+   
+            
     return models
 
 def eval_models(models:dict,X_test:pd.DataFrame,y_test:pd.Series,type:str,metric = 'r2') -> dict:
@@ -164,7 +177,6 @@ def eval_models(models:dict,X_test:pd.DataFrame,y_test:pd.Series,type:str,metric
     for name,model in models.items():
         print(f"evaluating {name} model")
         # eval based on the given metric eg: r2 , rmse , mae using score method
-        from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error,accuracy_score
         if metric == 'r2':
             models[name][f'score_{type}'] = model['model'].score(X_test.copy(),y_test.copy())   
         elif metric == 'rmse':

@@ -83,6 +83,7 @@ class CarFeatures:
 @dataclass()
 class CarFeaturesPrediction:
     """Car features dataclass"""
+    car_name:str
     year: int   
     color: str  
     fuil_type: str
