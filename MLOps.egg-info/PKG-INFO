@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: MLOps
+Version: 1.0
+Summary: a test project for MLOps
+Home-page: UNKNOWN
+Author: your name
+Author-email: your email
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Provides-Extra: dev
+Provides-Extra: docs

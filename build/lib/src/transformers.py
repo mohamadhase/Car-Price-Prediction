@@ -99,7 +99,8 @@ class NominalTransformer(BaseEstimator, TransformerMixin):
                     self.hot_encoder_data[column] = pickle.load(handle)
         except Exception as e:
             print(e)
-        for column in self.columns:  
+        for column in self.columns:  # not sure if this is work or not
+
             if column in NominalTransformer.hot_encoder_data:
                 classes = NominalTransformer.hot_encoder_data[column].classes_
                 # add every class as a column with value 0 if it is not equal the column value and 1 if it is
@@ -199,7 +200,7 @@ class log_transformer(BaseEstimator, TransformerMixin):
     def transform(self, X: pd.DataFrame, y=None):
         print(X)
         for column in X.columns:
-            if X[column].dtype in ['int64', 'float64', 'int32', 'float32']:
+            if X[column].dtype in ['int64', 'float64']:
                 X[column] = np.log(X[column])
             print(X[X.isna()])
         return X

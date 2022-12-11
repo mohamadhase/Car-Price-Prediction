@@ -16,6 +16,9 @@ def validate_file(file_id: str) -> bool:
     if len(response.history) > 0:
         os.remove(f'data/{file_id}.txt')
         
+       
+    
+
 if __name__ == '__main__':
     threads = []
     all_files = glob('data/*.txt')

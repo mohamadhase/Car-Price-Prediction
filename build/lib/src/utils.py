@@ -7,8 +7,7 @@ import convert_numbers
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 # mean square error
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error, accuracy_score
-
+from sklearn.metrics import r2_score,mean_squared_error,mean_absolute_error,accuracy_score
 
 def validate_columns(f):
     @wraps(f)
@@ -18,15 +17,18 @@ def validate_columns(f):
             if args[0].column not in args[1].columns:
                 raise WrongColumnName(args[0])
             return f(*args, **kwargs)
-        except AttributeError:
+        except AttributeError :
             pass
         # if its a list of columns
-        for col in args[0].columns:
+        for col in args[0].columns: 
             if col not in args[1].columns:
-                print(col, args[1].columns)
+                print(col,args[1].columns)
                 raise WrongColumnName(col)
         return f(*args, **kwargs)
+    
+
     return decorated
+
 
 
 def normalize_prev_owner(prev_owner: str) -> str or np.nan:
@@ -78,8 +80,7 @@ def normalize_prev_owner(prev_owner: str) -> str or np.nan:
         return np.nan
     return prev_owner
 
-
-def fill_by_mean_mode_of_year(row: pd.Series, car_data, column: str, type: str = 'mode') -> pd.Series:
+def fill_by_mean_mode_of_year(row: pd.Series, car_data,column:str,type:str = 'mode') -> pd.Series:
     """this function is used to fill the null values of column with the mean of the silimlar data of the same year
 
     Args:
@@ -87,24 +88,32 @@ def fill_by_mean_mode_of_year(row: pd.Series, car_data, column: str, type: str =
     Returns:
         pd.Series: the row of the dataframe with the filled  column
     """
-    if type not in ['mean', 'mode']:
+    if type not in ['mean','mode']:
         raise ValueError("type must be mean or mode")
 
     if column not in car_data.columns:
         raise WrongColumnName(column)
-    if row[column] not in [np.nan, np.NaN, None]:
+    # what is the value of float('nan')?
+    # a: nan
+    if row[column] not in [np.nan,np.NaN,None] :
+        # check if numaric or not
         try:
             int(row[column])
             return row
         except ValueError:
             pass
+        
+    
+   
     year = row['year']
     data = car_data[car_data['year'] == year]
+    # drop the null values
     data = data[data[column].notna()]
-    try:
-
+    
+    try :
+        
         value = data[column].mode()[0] if type == 'mode'\
-            else data[column].mean()
+                                else data[column].mean()
         row[column] = value
         return row
     except KeyError:
@@ -112,87 +121,77 @@ def fill_by_mean_mode_of_year(row: pd.Series, car_data, column: str, type: str =
 
 
 def arabic_to_english(equation: str) -> str or np.nan:
-    """ convert the arabic writen equation to a string number
-
-    Args:
-        equation (str): the arabic writen equation
-
-    Returns:
-        str or np.nan: the eval of the equation or np.nan if the equation dont eval to a number
-    """
     if pd.isnull(equation):
         return equation
     if type(equation) != str:
         return equation
-
+    
     equation = equation.strip()
-    equation = re.sub(r'[^a-zA-Z0-9\u0600-\u06FF]', '', equation) # this regex match any string that is not an arabic or english letter or number
+    equation = re.sub(r'[^a-zA-Z0-9\u0600-\u06FF]', '', equation)
     equation = convert_numbers.arabic_to_english(equation)
     equation = sum(int(i) for i in equation)
     return equation
 
 
-def encoding_feature(df: pd.DataFrame, feature: str, order_dict: dict) -> pd.DataFrame:
+def encoding_feature( df: pd.DataFrame, feature: str,order_dict:dict) -> pd.DataFrame:
     """this function is used to encode the nominal categorical features"""
     order = order_dict[feature]
     df[feature] = df[feature].map(order)
     return df
 
 
-def encoding_additional_info(df: pd.DataFrame, feature: str, possible_values: list) -> pd.DataFrame:
-    """this function is used to encode the additional_info feature"""
-    df[feature] = df[feature].str.split(",")
-    for i in possible_values:
-        df[i] = df[feature].apply(lambda x: 1 if i in x else 0)
-    return df
-
-
-def hyper_parameter_training(models: dict, X_train: pd.DataFrame, y_train: pd.Series, scoring: str = 'r2', cv: int = 5) -> dict:
-    """ this function is used to find the best hyper parameters for the models using GridSearch and return the trained models """
-    for name, model in models.items():
+def encoding_additional_info(df: pd.DataFrame, feature: str,possible_values:list) -> pd.DataFrame:
+        """this function is used to encode the additional_info feature"""
+        df[feature] = df[feature].str.split(",")
+        
+        for i in possible_values:
+            df[i] = df[feature].apply(lambda x: 1 if i in x else 0)
+            
+        return df
+    
+def hyper_parameter_training(models:dict,X_train:pd.DataFrame,y_train:pd.Series,scoring:str = 'r2',cv:int = 5) -> dict:
+    """ this function is used to find the best hyper parameters for the models and return the trained models """
+    for name,model in models.items():
         print(f"Training the model {name} ")
         models[name]['model'] = Pipeline(steps=model['steps'])
-        models[name]['model'] = GridSearchCV(estimator=models[name]['model'], param_grid=models[name]
-                                             ['grid_vals'], scoring=scoring, cv=cv, n_jobs=-1,)  # ignore the warnings
-        models[name]['model'].fit(X_train.copy(), y_train.copy())
+        models[name]['model'] = GridSearchCV(estimator  = models[name]['model'],param_grid = models[name]['grid_vals'],scoring=scoring,cv=cv,n_jobs=-1,) # ignore the warnings
+        models[name]['model'].fit(X_train.copy(),y_train.copy())
     return models
-
-
-def train_models(models: dict, X_train: pd.DataFrame, y_train: pd.Series) -> dict:
+    
+def train_models(models: dict,X_train:pd.DataFrame,y_train:pd.Series) -> dict:
     """ this function is used to train the models and return the trained models """
-    for name, model in models.items():
+    for name,model in models.items():
         models[name]['model'] = Pipeline(steps=model['steps'])
         print(f"fitting the model {name} ")
-        models[name]['model'].fit(X_train.copy(), y_train.copy())
-
+        models[name]['model'].fit(X_train.copy(),y_train.copy())
+   
+            
     return models
 
-
-def eval_models(models: dict, X_test: pd.DataFrame, y_test: pd.Series, type: str, metric='r2') -> dict:
+def eval_models(models:dict,X_test:pd.DataFrame,y_test:pd.Series,type:str,metric = 'r2') -> dict:
     """ this function is used to evaluate the models and return the results """
-    if type not in ['train', 'test']:
+    if type not in ['train','test']:
         raise ValueError("type must be train or test")
-    if metric not in ['r2', 'mae', 'rmse', 'accuracy']:
+    if metric not in ['r2','mae','rmse','accuracy']:
         raise ValueError("metric must be r2 or mae or mse or accuracy")
-    for name, model in models.items():
+    for name,model in models.items():
         print(f"evaluating {name} model")
         # eval based on the given metric eg: r2 , rmse , mae using score method
         if metric == 'r2':
-            models[name][f'score_{type}'] = model['model'].score(
-                X_test.copy(), y_test.copy())
+            models[name][f'score_{type}'] = model['model'].score(X_test.copy(),y_test.copy())   
         elif metric == 'rmse':
-            models[name][f'score_{type}'] = np.sqrt(mean_squared_error(
-                y_test.copy(), model['model'].predict(X_test.copy())))
+            models[name][f'score_{type}'] = np.sqrt(mean_squared_error(y_test.copy(),model['model'].predict(X_test.copy())))
         elif metric == 'mae':
-            models[name][f'score_{type}'] = mean_absolute_error(
-                y_test.copy(), model['model'].predict(X_test.copy()))
+            models[name][f'score_{type}'] = mean_absolute_error(y_test.copy(),model['model'].predict(X_test.copy()))
         elif metric == 'accuracy':
-            models[name][f'score_{type}'] = accuracy_score(
-                y_test.copy(), model['model'].predict(X_test.copy()))
+            models[name][f'score_{type}'] = accuracy_score(y_test.copy(),model['model'].predict(X_test.copy()))
 
+  
     return models
 
 
-def log_transform(x: np.array) -> np.array:
-    """ Calculate log adding 1 to avoid calculation errors if x is very close to 0."""
+def log_transform(x):
+    """ 
+    Calculate log adding 1 to avoid calculation errors if x is very close to 0.
+    """
     return np.log(x+1)

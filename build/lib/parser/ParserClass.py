@@ -8,8 +8,8 @@ from MyHTMLParser import MyHTMLParser
 from threading import Thread
 class Parser():
     """ this class is responsible for parsing the files and extracting the data from them """
-    def __init__(self,path_regex=PATH_REGEX):
-        self.path_regex = path_regex
+    def __init__(self):
+        self.path_regex = PATH_REGEX 
         self.files_list = glob(self.path_regex)
         self.parser = None
         self.objects = []

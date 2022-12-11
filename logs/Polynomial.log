@@ -1,4 +1,0 @@
-ERROR:api:[Errno 2] No such file or directory: '../models/DecisionTree.pkl'
-Traceback (most recent call last):
-  File ".\api.py", line 27, in <module>
-FileNotFoundError: [Errno 2] No such file or directory: '../models/DecisionTree.pkl'

@@ -1,17 +1,11 @@
 import pickle
 import pandas as pd
-
 from http import HTTPStatus
-import pydantic
-import uvicorn
 from src.data_handler import CarFeaturesPrediction
 import logging
-
 from fastapi import FastAPI, Request
 #print my current path 
 import os
-import src.transformers
-import utils
 import sys
 
 sys.path.append(os.getcwd())
@@ -27,8 +21,6 @@ try:
     DesicionTreeModel = pickle.load(open('../models/Polynomial.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
 
 except FileNotFoundError as e:
-    #print the relative path of the script
-    print(e)
     logger.exception(e)
     exit()
 
@@ -46,9 +38,6 @@ def _health_check(request: Request) -> dict:
 
 
 @app.post("/predict")
-# the CarFeatures class attributes are optional becouse i used it in parsing the data 
-# can we make them required only in the post request without effecting the parsing process ? 
-# a: yes we can, i will show you how in the next snippet
 async def _predict(car_features: CarFeaturesPrediction) -> dict:
     """predict the price of the car"""
     logger.info("Predicting the price of the car")
@@ -56,9 +45,9 @@ async def _predict(car_features: CarFeaturesPrediction) -> dict:
 
     df = pd.DataFrame([vars(car_features)]) 
     df.drop(columns=['__pydantic_initialised__'], inplace=True)
+    logger.debug(f"values: {df}")
     price = DesicionTreeModel.predict(df)
-    
-    print(price)
+    logger.debug(f"price: {price}")
     response = {
         "message": HTTPStatus.OK.phrase,
         "status-code": HTTPStatus.OK,
