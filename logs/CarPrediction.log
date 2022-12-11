@@ -642,3 +642,29 @@ INFO:api:Predicting the price of the car
 INFO:api:Predicting the price of the car successful
 INFO:api:Predicting the price of the car
 INFO:api:Predicting the price of the car successful
+ERROR:__main__:[Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+Traceback (most recent call last):
+  File "c:\Users\nasser\Desktop\CAR\api.py", line 27, in <module>
+    DesicionTreeModel = pickle.load(open('../models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/DecisionTree.pkl'
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful
+INFO:api:Predicting the price of the car
+INFO:api:Predicting the price of the car successful

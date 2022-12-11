@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(filename='../logs/CarPrediction.log', level=logging.DEBUG)
 
 try: 
-    DesicionTreeModel = pickle.load(open('../models/DecisionTree.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+    DesicionTreeModel = pickle.load(open('../models/Polynomial.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
 
 except FileNotFoundError as e:
     #print the relative path of the script
