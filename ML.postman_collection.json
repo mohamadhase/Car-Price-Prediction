@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "7206ef77-0074-4670-b82a-6307f276c397",
+		"name": "ML",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24202064"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": 2010,\r\n    \"color\": \"h \",\r\n    \"fuil_type\": \"ديزل \",\r\n    \"car_prev_state\":\"تأجير \",\r\n    \"license_country\":\"فلسطينية \",\r\n    \"transimission_type\":\"نصف اوتوماتيك \",\r\n    \"glass_type\":\"الكتروني \",\r\n    \"motor_power\":100000,\r\n    \"mileage\":200,\r\n    \"passenger_capacity\":\"9+1 \",\r\n    \"additional_info\":\"مُكيّف,إغلاق مركزي,جهاز إنذار,مسجل CD,جنطات مغنيسيوم,وسادة حماية هوائية\",\r\n    \"sell_date\":\"2015-08-16\",\r\n    \"prev_owners\":\"1\"\r\n \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
