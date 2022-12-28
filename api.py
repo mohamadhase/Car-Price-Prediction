@@ -7,8 +7,10 @@ from fastapi import FastAPI, Request
 #print my current path 
 import os
 import sys
-
+#sys.path.append()
 sys.path.append(os.getcwd())
+sys.path.append(os.getcwd()+"\\src")
+import transformers
 app = FastAPI(
     title="CAR PRICE PREDICTION API",
     description="..",
@@ -18,7 +20,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(filename='../logs/CarPrediction.log', level=logging.DEBUG)
 
 try: 
-    DesicionTreeModel = pickle.load(open('../models/Polynomial.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+    gradient_Boosting_Regression = pickle.load(open('../models/gradient_Boosting_Regression.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
 
 except FileNotFoundError as e:
     logger.exception(e)
@@ -46,7 +48,7 @@ async def _predict(car_features: CarFeaturesPrediction) -> dict:
     df = pd.DataFrame([vars(car_features)]) 
     df.drop(columns=['__pydantic_initialised__'], inplace=True)
     logger.debug(f"values: {df}")
-    price = DesicionTreeModel.predict(df)
+    price = gradient_Boosting_Regression.predict(df)
     logger.debug(f"price: {price}")
     response = {
         "message": HTTPStatus.OK.phrase,

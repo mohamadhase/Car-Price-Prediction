@@ -668,3 +668,34 @@ INFO:api:Predicting the price of the car
 INFO:api:Predicting the price of the car successful
 INFO:api:Predicting the price of the car
 INFO:api:Predicting the price of the car successful
+ERROR:api:[Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+Traceback (most recent call last):
+  File ".\api.py", line 23, in <module>
+    gradient_Boosting_Regression = pickle.load(open('../models/gradient_Boosting_Regression.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+ERROR:api:[Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+Traceback (most recent call last):
+  File ".\api.py", line 23, in <module>
+    gradient_Boosting_Regression = pickle.load(open('../models/gradient_Boosting_Regression.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+ERROR:api:[Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+Traceback (most recent call last):
+  File ".\api.py", line 23, in <module>
+    gradient_Boosting_Regression = pickle.load(open('../models/gradient_Boosting_Regression.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+ERROR:api:[Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+Traceback (most recent call last):
+  File ".\api.py", line 23, in <module>
+    gradient_Boosting_Regression = pickle.load(open('../models/gradient_Boosting_Regression.pkl', 'rb')) # could not find the file the path of the file is CAR/MODELS/DecisionTree.pkl
+FileNotFoundError: [Errno 2] No such file or directory: '../models/gradient_Boosting_Regression.pkl'
+INFO:api:Health check
+INFO:api:Health check successful
+INFO:api:Health check
+INFO:api:Health check successful
+INFO:api:Predicting the price of the car
+DEBUG:api:values:     car_name  year  color fuil_type car_prev_state  ... mileage passenger_capacity prev_owners                                    additional_info   sell_date
+0  \u0643\u064a\u0627 \u0628\u0648\u0646\u062f\u0627  2021  \u0627\u0635\u0641\u0631     \u0628\u0646\u0632\u064a\u0646          \u062a\u0623\u062c\u064a\u0631   ...     200               4+1            5  \u0645\u064f\u0643\u064a\u0651\u0641,\u0625\u063a\u0644\u0627\u0642 \u0645\u0631\u0643\u0632\u064a,\u062c\u0647\u0627\u0632 \u0625\u0646\u0630\u0627\u0631,\u0645\u0633\u062c\u0644 CD,\u062c\u0646\u0637\u0627\u062a \u0645\u063a...  2015-08-16
+
+[1 rows x 14 columns]
+DEBUG:api:price: [60740.2098422]
+INFO:api:Predicting the price of the car successful
